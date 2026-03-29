@@ -13,13 +13,10 @@
             ]
         }
     },
-    "features": {
-        "ghcr.io/swift-server-community/swift-devcontainer-features/sqlite:latest": {}
-    },
     "mounts": [
         "source=${localWorkspaceFolder}/data,target=/home/vscode/data,type=bind,consistency=cached"
     ],
     "forwardPorts": [],
-    "postCreateCommand": "pip install --user -r requirements.txt",
+    "postCreateCommand": "apt-get update && apt-get install -y sqlite3 libsqlite3-dev && pip install --user -r requirements.txt",
     "remoteUser": "vscode"
 }
